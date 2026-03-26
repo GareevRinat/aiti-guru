@@ -1,0 +1,86 @@
+@use '../../app/styles/variables' as *;
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-bg;
+  padding: $spacing-xl;
+}
+
+.card {
+  background: $color-white;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border;
+  box-shadow: $shadow-card;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: $spacing-2xl;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  color: $color-text;
+  margin-bottom: $spacing-xs;
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: $color-text-muted;
+  margin-bottom: $spacing-2xl;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  text-align: left;
+}
+
+.apiError {
+  font-size: $font-size-sm;
+  color: $color-error;
+  text-align: center;
+  padding: $spacing-sm $spacing-md;
+  background-color: rgba(239, 68, 68, 0.08);
+  border-radius: $radius-md;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin: $spacing-xl 0;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: $color-border;
+  }
+}
+
+.register {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  a {
+    color: $color-primary;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

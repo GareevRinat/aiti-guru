@@ -1,0 +1,381 @@
+@use '../../app/styles/variables' as *;
+
+.page {
+  min-height: 100vh;
+  background-color: #F5F5F7;
+}
+
+// Header — white bg, no border
+.header {
+  background: $color-white;
+  padding: $spacing-xl $spacing-3xl;
+  display: flex;
+  align-items: center;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: $spacing-2xl;
+  width: 100%;
+}
+
+.headerTitle {
+  font-family: 'Work Sans', $font-family;
+  font-size: 22px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999999;
+  pointer-events: none;
+  display: flex;
+}
+
+.searchInput {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px 0 44px;
+  border: none;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  color: $color-text;
+  background: #F3F3F3;
+  outline: none;
+  transition: background-color $transition-fast;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  &::placeholder {
+    color: #999999;
+  }
+
+  &:focus {
+    background: #EDEDEE;
+  }
+}
+
+// Content area — white bg
+.contentArea {
+  background: $color-white;
+  margin-top: 0;
+  padding: $spacing-2xl $spacing-3xl;
+}
+
+// Toolbar
+.toolbar {
+  background: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-2xl $spacing-3xl;
+  padding-top: $spacing-3xl;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-family: 'Work Sans', $font-family;
+  font-size: $font-size-lg;
+  font-weight: 700;
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.refreshBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #ECECEB;
+  background: $color-white;
+  color: #515161;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $color-border-light;
+    color: $color-text;
+  }
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 6px;
+  border: none;
+  background: #242EDB;
+  color: #FFFFFF;
+  font-size: $font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background: #1E27C4;
+  }
+}
+
+// Loading bar
+.loadingBar {
+  height: 3px;
+  background-color: $color-border-light;
+  border-radius: $radius-full;
+  overflow: hidden;
+}
+
+.loadingBarInner {
+  height: 100%;
+  width: 40%;
+  background-color: $color-primary;
+  border-radius: $radius-full;
+  animation: loadingSlide 1.2s ease-in-out infinite;
+}
+
+@keyframes loadingSlide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+// Table
+.tableWrapper {
+  background: $color-white;
+  padding: 0 $spacing-3xl;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $spacing-lg $spacing-lg;
+    text-align: left;
+    border-bottom: 1px solid #E2E2E2;
+  }
+
+  // Table headers — bolder weight
+  th {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: #B2B3B9;
+    white-space: nowrap;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-md;
+    border-top: 1px solid #E2E2E2;
+  }
+
+  tbody tr {
+    position: relative;
+    transition: background-color $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-border-light;
+    }
+
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+}
+
+// Selected row — blue stripe on left
+.selectedRow {
+  position: relative;
+
+  td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    bottom: 1px;
+    width: 3px;
+    background-color: #3C538E;
+  }
+}
+
+.checkboxSelected {
+  background-color: #3C538E !important;
+  border-color: #B2B3B9 !important;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+// Checkbox
+.checkboxCol {
+  width: 40px;
+  text-align: center;
+  position: relative;
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+
+    &:checked {
+      background-color: #3C538E;
+      border-color: #3C538E;
+    }
+  }
+}
+
+// Selected row — blue left stripe
+.selectedRow {
+  td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #3C538E;
+  }
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-sm;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #E5E5E5;
+}
+
+// Наименование — Bold
+.productTitle {
+  font-size: $font-size-base;
+  font-weight: 700;
+  color: $color-text;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.productCategory {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+// Вендор — Bold
+.vendorCell {
+  font-weight: 700;
+}
+
+.rating {
+  font-size: $font-size-base;
+}
+
+.ratingLow {
+  font-size: $font-size-base;
+  color: #F11010;
+  font-weight: 600;
+}
+
+// Price — Roboto Mono
+.priceWhole {
+  font-family: 'Roboto Mono', monospace;
+  font-size: $font-size-base;
+  font-weight: 400;
+  line-height: 110%;
+}
+
+.priceDecimal {
+  font-family: 'Roboto Mono', monospace;
+  font-size: $font-size-xs;
+  font-weight: 400;
+  line-height: 110%;
+  color: $color-text-muted;
+}
+
+// Actions — pill + dots circle
+.actionsCol {
+  width: 110px;
+  white-space: nowrap;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-left: $spacing-sm;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.empty {
+  padding: $spacing-3xl;
+  text-align: center;
+  color: $color-text-muted;
+  font-size: $font-size-md;
+}
+
+// Footer
+.footer {
+  background: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg $spacing-3xl;
+  padding-bottom: $spacing-2xl;
+}
+
+.showing {
+  font-size: $font-size-base;
+  color: #969B9F;
+}
+
+.showingBold {
+  color: #333333;
+  font-weight: 600;
+}

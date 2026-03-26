@@ -1,0 +1,69 @@
+@use '../../../app/styles/variables' as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: $font-size-sm;
+  color: #B2B3B9;
+  border: 1px solid #ECECEB;
+  background: none;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover:not(:disabled) {
+    background-color: $color-border-light;
+  }
+}
+
+.active {
+  background-color: #797FEA;
+  border-color: #797FEA;
+  color: #FFFFFF;
+
+  &:hover {
+    background-color: #6A70E0;
+    border-color: #6A70E0;
+  }
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #B2B3B9;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color $transition-fast;
+
+  &:hover:not(:disabled) {
+    color: $color-text;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #B2B3B9;
+  font-size: $font-size-sm;
+}

@@ -1,0 +1,88 @@
+@use '../../../app/styles/variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $color-text;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: 0 $spacing-md;
+  background: $color-white;
+  transition: border-color $transition-fast;
+
+  &:focus-within {
+    border-color: $color-primary;
+  }
+
+  &.hasError {
+    border-color: $color-error;
+  }
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  font-size: $font-size-base;
+  color: $color-text;
+  background: transparent;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+}
+
+.iconLeft {
+  display: flex;
+  align-items: center;
+  color: $color-text-muted;
+  flex-shrink: 0;
+}
+
+.iconRight {
+  display: flex;
+  align-items: center;
+  color: $color-text-muted;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    color: $color-text-secondary;
+  }
+}
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  color: $color-text-muted;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    color: $color-text-secondary;
+  }
+}
+
+.error {
+  font-size: $font-size-xs;
+  color: $color-error;
+}
