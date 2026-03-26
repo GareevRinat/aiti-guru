@@ -17,11 +17,14 @@
 }
 
 .primary {
-  background-color: $color-primary;
+  background: #242EDB;
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 100%);
   color: $color-white;
+  border: 1px solid #367AFF;
+  box-shadow: 0 8px 8px rgba(54, 122, 255, 0.03);
 
   &:hover:not(:disabled) {
-    background-color: $color-primary-hover;
+    background-color: #1E27C4;
   }
 }
 
@@ -55,8 +58,12 @@
 }
 
 .lg {
-  padding: 12px 24px;
-  font-size: $font-size-md;
+  height: 54px;
+  padding: 0 24px;
+  font-family: 'Inter', $font-family;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
   width: 100%;
 }
 

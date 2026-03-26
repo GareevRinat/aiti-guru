@@ -10,14 +10,32 @@
 }
 
 .card {
+  position: relative;
   background: $color-white;
-  border-radius: $radius-xl;
-  border: 1px solid $color-border;
-  box-shadow: $shadow-card;
-  padding: 40px;
+  border-radius: 40px;
+  box-shadow: 0 24px 32px rgba(0, 0, 0, 0.04);
+  padding: 48px 40px;
   width: 100%;
-  max-width: 420px;
+  max-width: 527px;
   text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 34px;
+    background: linear-gradient(180deg, rgba(35, 35, 35, 0.03) 0%, rgba(35, 35, 35, 0) 50%);
+    border: 1px solid #EDEDED;
+    mask-image: linear-gradient(180deg, black 0%, black 20%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, black 20%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .logo {
@@ -25,15 +43,21 @@
 }
 
 .title {
-  font-size: $font-size-2xl;
-  font-weight: 700;
-  color: $color-text;
+  font-family: 'Inter', $font-family;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.015em;
+  color: #232323;
   margin-bottom: $spacing-xs;
 }
 
 .subtitle {
-  font-size: $font-size-base;
-  color: $color-text-muted;
+  font-family: 'Inter', $font-family;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  color: #9C9C9C;
   margin-bottom: $spacing-2xl;
 }
 
@@ -58,7 +82,7 @@
   align-items: center;
   gap: $spacing-md;
   margin: $spacing-xl 0;
-  color: $color-text-muted;
+  color: #B2B3B9;
   font-size: $font-size-sm;
 
   &::before,
@@ -66,21 +90,24 @@
     content: '';
     flex: 1;
     height: 1px;
-    background-color: $color-border;
+    background-color: #EDEDED;
   }
 }
 
 .register {
-  font-size: $font-size-sm;
-  color: $color-text-secondary;
+  font-family: 'Inter', $font-family;
+  font-size: 18px;
+  line-height: 150%;
+  color: #6C6C6C;
 
   a {
-    color: $color-primary;
+    color: #242EDB;
     font-weight: 500;
     cursor: pointer;
+    text-decoration: underline;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }

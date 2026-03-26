@@ -113,6 +113,8 @@ export function ProductsPage() {
         </div>
       </header>
 
+      {/* Content block */}
+      <div className={styles.contentBlock}>
       {/* Toolbar */}
       <div className={styles.toolbar}>
         <div className={styles.toolbarLeft}>
@@ -252,6 +254,8 @@ export function ProductsPage() {
           onPageChange={setPage}
         />
       </div>
+
+      </div>{/* end contentBlock */}
 
       <AddProductModal
         isOpen={isAddModalOpen}
