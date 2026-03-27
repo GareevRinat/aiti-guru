@@ -132,3 +132,28 @@ Cross-check implementation against screenshots.
 6. **Серая кнопка** — обводка `$color-border` + прозрачный фон, иконка минус
 7. **Убран `.logoutBtn`** — все кнопки хедера одним стилем
 8. **Убран `box-shadow`** с таблицы, `text-transform: uppercase` с заголовков — в Figma этого нет
+
+---
+
+## Промпт #6 — Добавление тестов
+
+**Дата:** 2026-03-27
+**Модель:** Claude Opus 4.6 (1M context) via Claude Code CLI
+
+**Промпт:**
+```
+Проверь и посмотри, что можно покрыть тестами (модульные, интеграционные, e2e)
+```
+
+**Результат:**
+- Установлены: vitest, @testing-library/react, @testing-library/jest-dom, @testing-library/user-event, jsdom, msw
+- Настроен vitest.config.ts с jsdom, path aliases, CSS modules
+- **42 теста в 8 файлах**, все проходят:
+  - `formatPrice.test.ts` — 5 тестов (форматирование цен)
+  - `debounce.test.ts` — 4 теста (задержка, сброс, аргументы)
+  - `useAuthStore.test.ts` — 7 тестов (login/logout/hydrate, localStorage/sessionStorage)
+  - `useProductsStore.test.ts` — 7 тестов (сортировка, поиск, добавление товара)
+  - `Button.test.tsx` — 5 тестов (рендер, клик, loading, disabled)
+  - `Modal.test.tsx` — 4 теста (open/close, Escape, overlay click)
+  - `Pagination.test.tsx` — 6 тестов (рендер, навигация, disabled кнопки)
+  - `ProtectedRoute.test.tsx` — 2 теста (редирект, рендер children)
