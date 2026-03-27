@@ -1,31 +1,55 @@
-// Colors from Figma
-$color-primary: #3B3FE4;
-$color-primary-hover: #2F33CC;
+// ─── Colors (Figma) ───
+$color-primary: #242EDB;
+$color-primary-hover: #1E27C4;
+$color-primary-light: #797FEA;
+$color-primary-border: #367AFF;
 $color-white: #FFFFFF;
 $color-bg: #F5F5F7;
-$color-bg-card: #FFFFFF;
-$color-text: #1A1A2E;
-$color-text-secondary: #6B7280;
-$color-text-muted: #9CA3AF;
-$color-border: #E5E7EB;
-$color-border-light: #F3F4F6;
-$color-error: #EF4444;
-$color-success: #22C55E;
-$color-rating-low: #F11010;
-$color-green-btn: #22C55E;
-$color-gray-icon: #9CA3AF;
+$color-bg-search: #F3F3F3;
+$color-bg-search-focus: #EDEDEE;
 
-// Typography
+// Text
+$color-text: #232323;
+$color-text-body: #161919;
+$color-text-secondary: #6C6C6C;
+$color-text-muted: #9C9C9C;
+$color-text-placeholder: #999999;
+$color-text-light: #B2B3B9;
+$color-text-subtle: #E0E0E0;
+$color-text-faint: #EBEBEB;
+$color-text-footer: #969B9F;
+$color-text-footer-bold: #333333;
+
+// Borders
+$color-border: #EDEDED;
+$color-border-row: #E2E2E2;
+$color-border-checkbox: #B2B3B9;
+$color-border-input: #EDEDED;
+$color-border-page: #ECECEB;
+$color-border-light: #F3F4F6;
+
+// Status
+$color-error: #EF4444;
+$color-rating-low: #F11010;
+$color-selected: #3C538E;
+$color-icon-action: #515161;
+
+// ─── Typography ───
 $font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-inter: 'Inter', $font-family;
+$font-work-sans: 'Work Sans', $font-family;
+$font-roboto-mono: 'Roboto Mono', monospace;
+
 $font-size-xs: 12px;
 $font-size-sm: 13px;
 $font-size-base: 14px;
 $font-size-md: 16px;
 $font-size-lg: 18px;
 $font-size-xl: 20px;
-$font-size-2xl: 24px;
+$font-size-2xl: 22px;
+$font-size-3xl: 40px;
 
-// Spacing
+// ─── Spacing ───
 $spacing-xs: 4px;
 $spacing-sm: 8px;
 $spacing-md: 12px;
@@ -34,17 +58,21 @@ $spacing-xl: 20px;
 $spacing-2xl: 24px;
 $spacing-3xl: 32px;
 
-// Border radius
+// ─── Border radius ───
 $radius-sm: 4px;
 $radius-md: 8px;
 $radius-lg: 12px;
 $radius-xl: 16px;
+$radius-card: 40px;
+$radius-card-inner: 34px;
 $radius-full: 9999px;
 
-// Shadows
-$shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+// ─── Shadows ───
+$shadow-card: 0 24px 32px rgba(0, 0, 0, 0.04);
+$shadow-search: 0 4px 4px rgba(0, 0, 0, 0.25);
 $shadow-modal: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-btn-primary: 0 8px 8px rgba(54, 122, 255, 0.03);
 
-// Transitions
+// ─── Transitions ───
 $transition-fast: 150ms ease;
 $transition-base: 200ms ease;

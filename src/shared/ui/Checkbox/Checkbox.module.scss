@@ -47,8 +47,8 @@
 }
 
 .label {
-  font-family: 'Inter', $font-family;
-  font-size: 18px;
+  font-family: $font-inter;
+  font-size: $font-size-lg;
   line-height: 150%;
-  color: #9C9C9C;
+  color: $color-text-muted;
 }

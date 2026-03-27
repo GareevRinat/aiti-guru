@@ -3,7 +3,7 @@
 .pagination {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: $spacing-sm;
 }
 
 .page {
@@ -12,10 +12,10 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  border-radius: 4px;
+  border-radius: $radius-sm;
   font-size: $font-size-sm;
-  color: #B2B3B9;
-  border: 1px solid #ECECEB;
+  color: $color-text-light;
+  border: 1px solid $color-border-page;
   background: none;
   cursor: pointer;
   transition: all $transition-fast;
@@ -26,13 +26,13 @@
 }
 
 .active {
-  background-color: #797FEA;
-  border-color: #797FEA;
-  color: #FFFFFF;
+  background-color: $color-primary-light;
+  border-color: $color-primary-light;
+  color: $color-white;
 
   &:hover {
-    background-color: #6A70E0;
-    border-color: #6A70E0;
+    background-color: darken(#797FEA, 5%);
+    border-color: darken(#797FEA, 5%);
   }
 }
 
@@ -42,7 +42,7 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  color: #B2B3B9;
+  color: $color-text-light;
   background: none;
   border: none;
   cursor: pointer;
@@ -64,6 +64,6 @@
   justify-content: center;
   width: 30px;
   height: 30px;
-  color: #B2B3B9;
+  color: $color-text-light;
   font-size: $font-size-sm;
 }

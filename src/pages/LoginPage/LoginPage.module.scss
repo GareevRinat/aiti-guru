@@ -12,8 +12,8 @@
 .card {
   position: relative;
   background: $color-white;
-  border-radius: 40px;
-  box-shadow: 0 24px 32px rgba(0, 0, 0, 0.04);
+  border-radius: $radius-card;
+  box-shadow: $shadow-card;
   padding: 48px 40px;
   width: 100%;
   max-width: 527px;
@@ -23,9 +23,9 @@
     content: '';
     position: absolute;
     inset: 6px;
-    border-radius: 34px;
+    border-radius: $radius-card-inner;
     background: linear-gradient(180deg, rgba(35, 35, 35, 0.03) 0%, rgba(35, 35, 35, 0) 50%);
-    border: 1px solid #EDEDED;
+    border: 1px solid $color-border;
     mask-image: linear-gradient(180deg, black 0%, black 20%, transparent 100%);
     -webkit-mask-image: linear-gradient(180deg, black 0%, black 20%, transparent 100%);
     pointer-events: none;
@@ -43,21 +43,21 @@
 }
 
 .title {
-  font-family: 'Inter', $font-family;
-  font-size: 40px;
+  font-family: $font-inter;
+  font-size: $font-size-3xl;
   font-weight: 600;
   line-height: 110%;
   letter-spacing: -0.015em;
-  color: #232323;
+  color: $color-text;
   margin-bottom: $spacing-xs;
 }
 
 .subtitle {
-  font-family: 'Inter', $font-family;
-  font-size: 18px;
+  font-family: $font-inter;
+  font-size: $font-size-lg;
   font-weight: 500;
   line-height: 150%;
-  color: #9C9C9C;
+  color: $color-text-muted;
   margin-bottom: $spacing-2xl;
 }
 
@@ -73,7 +73,7 @@
   color: $color-error;
   text-align: center;
   padding: $spacing-sm $spacing-md;
-  background-color: rgba(239, 68, 68, 0.08);
+  background-color: rgba($color-error, 0.08);
   border-radius: $radius-md;
 }
 
@@ -82,7 +82,7 @@
   align-items: center;
   gap: $spacing-md;
   margin: $spacing-xl 0;
-  color: #B2B3B9;
+  color: $color-text-light;
   font-size: $font-size-sm;
 
   &::before,
@@ -90,18 +90,18 @@
     content: '';
     flex: 1;
     height: 1px;
-    background-color: #EDEDED;
+    background-color: $color-border;
   }
 }
 
 .register {
-  font-family: 'Inter', $font-family;
-  font-size: 18px;
+  font-family: $font-inter;
+  font-size: $font-size-lg;
   line-height: 150%;
-  color: #6C6C6C;
+  color: $color-text-secondary;
 
   a {
-    color: #242EDB;
+    color: $color-primary;
     font-weight: 500;
     cursor: pointer;
     text-decoration: underline;

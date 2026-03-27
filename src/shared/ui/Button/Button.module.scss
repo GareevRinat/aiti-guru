@@ -17,14 +17,14 @@
 }
 
 .primary {
-  background: #242EDB;
-  background-image: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 100%);
+  background: $color-primary;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
   color: $color-white;
-  border: 1px solid #367AFF;
-  box-shadow: 0 8px 8px rgba(54, 122, 255, 0.03);
+  border: 1px solid $color-primary-border;
+  box-shadow: $shadow-btn-primary;
 
   &:hover:not(:disabled) {
-    background-color: #1E27C4;
+    background-color: $color-primary-hover;
   }
 }
 
@@ -48,22 +48,22 @@
 }
 
 .sm {
-  padding: 6px 12px;
+  padding: 6px $spacing-md;
   font-size: $font-size-sm;
 }
 
 .md {
-  padding: 10px 20px;
+  padding: 10px $spacing-xl;
   font-size: $font-size-base;
 }
 
 .lg {
   height: 54px;
-  padding: 0 24px;
-  font-family: 'Inter', $font-family;
-  font-size: 18px;
+  padding: 0 $spacing-2xl;
+  font-family: $font-inter;
+  font-size: $font-size-lg;
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: $radius-lg;
   width: 100%;
 }
 

@@ -2,14 +2,14 @@
 
 .page {
   min-height: 100vh;
-  background-color: #F5F5F7;
+  background-color: $color-bg;
 }
 
-// Header — white bg
+// Header
 .header {
   background: $color-white;
   padding: $spacing-xl $spacing-3xl;
-  margin-top: 20px;
+  margin-top: $spacing-xl;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
@@ -23,8 +23,8 @@
 }
 
 .headerTitle {
-  font-family: 'Work Sans', $font-family;
-  font-size: 22px;
+  font-family: $font-work-sans;
+  font-size: $font-size-2xl;
   font-weight: 700;
   white-space: nowrap;
   order: 1;
@@ -39,10 +39,10 @@
 
 .searchIcon {
   position: absolute;
-  left: 16px;
+  left: $spacing-lg;
   top: 50%;
   transform: translateY(-50%);
-  color: #999999;
+  color: $color-text-placeholder;
   pointer-events: none;
   display: flex;
 }
@@ -50,33 +50,33 @@
 .searchInput {
   width: 100%;
   height: 48px;
-  padding: 0 16px 0 44px;
+  padding: 0 $spacing-lg 0 44px;
   border: none;
   border-radius: $radius-md;
   font-size: $font-size-base;
   color: $color-text;
-  background: #F3F3F3;
+  background: $color-bg-search;
   outline: none;
   transition: background-color $transition-fast;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadow-search;
 
   &::placeholder {
-    color: #999999;
+    color: $color-text-placeholder;
   }
 
   &:focus {
-    background: #EDEDEE;
+    background: $color-bg-search-focus;
   }
 }
 
-// Content area — white bg
+// Content area
 .contentArea {
   background: $color-white;
   margin-top: 0;
   padding: $spacing-2xl $spacing-3xl;
 }
 
-// Content block — white bg
+// Content block
 .contentBlock {
   background: $color-white;
 }
@@ -96,7 +96,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Work Sans', $font-family;
+  font-family: $font-work-sans;
   font-size: $font-size-lg;
   font-weight: 700;
 }
@@ -113,10 +113,10 @@
   justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 8px;
-  border: 1px solid #ECECEB;
+  border-radius: $radius-md;
+  border: 1px solid $color-border-page;
   background: $color-white;
-  color: #515161;
+  color: $color-icon-action;
   cursor: pointer;
   transition: all $transition-fast;
 
@@ -130,20 +130,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: $spacing-sm;
   height: 42px;
-  padding: 0 24px;
+  padding: 0 $spacing-2xl;
   border-radius: 6px;
   border: none;
-  background: #242EDB;
-  color: #FFFFFF;
+  background: $color-primary;
+  color: $color-white;
   font-size: $font-size-base;
   font-weight: 500;
   cursor: pointer;
   transition: background-color $transition-fast;
 
   &:hover {
-    background: #1E27C4;
+    background: $color-primary-hover;
   }
 }
 
@@ -178,20 +178,19 @@
   border-collapse: collapse;
 
   th, td {
-    padding: $spacing-lg $spacing-lg;
+    padding: $spacing-lg;
     text-align: left;
-    border-bottom: 1px solid #E2E2E2;
+    border-bottom: 1px solid $color-border-row;
   }
 
-  // Table headers — bolder weight
   th {
     font-size: $font-size-base;
     font-weight: 600;
-    color: #B2B3B9;
+    color: $color-text-light;
     white-space: nowrap;
     padding-top: $spacing-xl;
     padding-bottom: $spacing-md;
-    border-top: 1px solid #E2E2E2;
+    border-top: 1px solid $color-border-row;
   }
 
   tbody tr {
@@ -209,7 +208,7 @@
   }
 }
 
-// Selected row — blue stripe on left
+// Selected row
 .selectedRow {
   position: relative;
 
@@ -217,16 +216,16 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 1px;
-    bottom: 1px;
-    width: 3px;
-    background-color: #3C538E;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: $color-selected;
   }
 }
 
 .checkboxSelected {
-  background-color: #3C538E !important;
-  border-color: #B2B3B9 !important;
+  background-color: $color-selected !important;
+  border-color: $color-text-light !important;
 }
 
 .sortable {
@@ -248,29 +247,16 @@
     appearance: none;
     width: 22px;
     height: 22px;
-    border: 1px solid #C4C4C4;
-    border-radius: 4px;
+    border: 1px solid $color-border-checkbox;
+    border-radius: $radius-sm;
     cursor: pointer;
     position: relative;
     vertical-align: middle;
 
     &:checked {
-      background-color: #3C538E;
-      border-color: #3C538E;
+      background-color: $color-selected;
+      border-color: $color-selected;
     }
-  }
-}
-
-// Selected row — blue left stripe
-.selectedRow {
-  td:first-child::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background-color: #3C538E;
   }
 }
 
@@ -286,10 +272,9 @@
   border-radius: $radius-sm;
   object-fit: cover;
   flex-shrink: 0;
-  background: #E5E5E5;
+  background: $color-border-row;
 }
 
-// Наименование — Bold
 .productTitle {
   font-size: $font-size-base;
   font-weight: 700;
@@ -305,7 +290,6 @@
   color: $color-text-muted;
 }
 
-// Вендор — Bold
 .vendorCell {
   font-weight: 700;
 }
@@ -316,27 +300,27 @@
 
 .ratingLow {
   font-size: $font-size-base;
-  color: #F11010;
+  color: $color-rating-low;
   font-weight: 600;
 }
 
-// Price — Roboto Mono
+// Price
 .priceWhole {
-  font-family: 'Roboto Mono', monospace;
+  font-family: $font-roboto-mono;
   font-size: $font-size-base;
   font-weight: 400;
   line-height: 110%;
 }
 
 .priceDecimal {
-  font-family: 'Roboto Mono', monospace;
+  font-family: $font-roboto-mono;
   font-size: $font-size-xs;
   font-weight: 400;
   line-height: 110%;
   color: $color-text-muted;
 }
 
-// Actions — pill + dots circle
+// Actions
 .actionsCol {
   width: 110px;
   white-space: nowrap;
@@ -377,10 +361,10 @@
 
 .showing {
   font-size: $font-size-base;
-  color: #969B9F;
+  color: $color-text-footer;
 }
 
 .showingBold {
-  color: #333333;
+  color: $color-text-footer-bold;
   font-weight: 600;
 }

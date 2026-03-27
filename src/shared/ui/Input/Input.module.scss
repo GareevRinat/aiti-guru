@@ -7,21 +7,21 @@
 }
 
 .label {
-  font-family: 'Inter', $font-family;
-  font-size: 18px;
+  font-family: $font-inter;
+  font-size: $font-size-lg;
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.015em;
-  color: #232323;
+  color: $color-text;
 }
 
 .inputContainer {
   display: flex;
   align-items: center;
   gap: $spacing-sm;
-  border: 1.5px solid #EDEDED;
-  border-radius: 12px;
-  padding: 0 16px;
+  border: 1.5px solid $color-border-input;
+  border-radius: $radius-lg;
+  padding: 0 $spacing-lg;
   height: 54px;
   background: $color-white;
   transition: border-color $transition-fast;
@@ -40,15 +40,15 @@
   border: none;
   outline: none;
   padding: 10px 0;
-  font-family: 'Inter', $font-family;
-  font-size: 18px;
+  font-family: $font-inter;
+  font-size: $font-size-lg;
   line-height: 150%;
   letter-spacing: -0.015em;
-  color: #232323;
+  color: $color-text;
   background: transparent;
 
   &::placeholder {
-    color: #9C9C9C;
+    color: $color-text-muted;
   }
 }
 
